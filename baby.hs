@@ -31,6 +31,7 @@ list3 = [[1,2,3,4],[5,3,3,3],[1,2,2,3,4],[1,2,3]]
 list4 = [[1,1,1,1]]
 
 -- | Comparing lists (lexicographical order)
+-- |
 -- |    ghci> [3,2,1] > [2,1,0]     -> True
 -- |    ghci> [3,2,1] > [2,10,100]  -> True
 -- |    ghci> [3,4,2] > [3,4]       -> True
@@ -38,3 +39,25 @@ list4 = [[1,1,1,1]]
 -- |    ghci> [3,4,2] == [3,4,2]    -> True
 
 -- | Basic functions that operate on lists.
+-- |
+-- |    ghci> head [5,4,3,2,1]      -> 5
+-- |    ghci> tail [5,4,3,2,1]      -> [4,3,2,1]
+-- |    ghci> last [5,4,3,2,1]      -> 1
+-- |    ghci> init [5,4,3,2,1]      -> [5,4,3,2]
+-- |    ghci> null [5,4,3,2,1]      -> False
+-- |    ghci> null []               -> True
+-- |    ghci> reverse [5,4,3,2,1]   -> [1,2,3,4,5]
+-- |    ghci> take 3 [5,4,3,2,1]    -> [5,4,3]
+-- |    ghci> take 5 [1,2]          -> [1,2]
+-- |    ghci> take 0 [6,6,6]        -> []
+-- |    ghci> drop 3 [5,4,3,2,1]    -> [2,1]
+-- |    ghci> drop 5 [1,2]          -> []
+-- |    gchi> drop 0 [6,6,6]        -> [6,6,6]
+-- |    ghci> maximum [5,4,3,2,1]   -> 5
+-- |    ghci> minimum [5,4,3,2,1]   -> 1
+-- |    gchi> sum [5,4,3,2,1]       -> 15
+-- |    ghci> product [5,4,3,2,1]   -> 120
+-- |    ghci> elem 4 [5,4,3,2,1]    -> True
+-- |    ghci> 4 `elem` [5,4,3,2,1]  -> True
+-- |    ghci> 9 `elem` [5,4,3,2,1]  -> False
+
