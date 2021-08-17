@@ -81,3 +81,9 @@ range7 = [13,26..]  -- | [13,26,39...] to infinity.
 -- |    ghci> take 10 (repeat 5) -> [5,5,5,5,5,5,5,5,5,5]
 -- | It's simpler to use the replicate function in this case.
 -- |    ghci> replicate 10 5 -> [5,5,5,5,5,5,5,5,5,5]
+
+-- | List comprehension are the Haskell term for set comprehensions used in mathematics.
+-- |    Let's get the first 10 even numbers using list comprehension notation.
+-- |        ghci> [x*2 | x <- [1..10]] -> [2,4,6,8,10,12,14,16,18,20]
+-- |    Let's now add a condition (or a predicate) to that function.
+-- |        ghci> [x*2 | x <- [1..10], x*2 => 12] -> [12,14,16,18,20]
