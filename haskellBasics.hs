@@ -87,3 +87,20 @@ range7 = [13,26..]  -- | [13,26,39...] to infinity.
 -- |        ghci> [x*2 | x <- [1..10]] -> [2,4,6,8,10,12,14,16,18,20]
 -- |    Let's now add a condition (or a predicate) to that function.
 -- |        ghci> [x*2 | x <- [1..10], x*2 => 12] -> [12,14,16,18,20]
+-- |    Let's get all numbers between 50 and 100 whose remainder when divided by 7 is 3.
+-- |        ghci> [x | x <- [50..100], x `mod` 7 == 3] -> [52,59,66,73,80,87,94]
+-- |    It is possible to have several predicates.
+-- |        ghci> [x | x <- [10..20], x /= 13, x /= 15, x /= 19] -> [10,11,12,14,16,17,18,20]
+-- |    It is possible to draw from several lists. For example, to get the product of all the possible combinations between numbers in those lists.
+-- |        ghci> [x*y | x <- [1,2,3], y <- [10,20,30]] -> [10,20,30,20,40,60,30,60,90]
+-- |        ghci> [adjective ++ " " ++ noun | adjective <- ["lazy", "grouchy", "scheming"], noun <- ["hobo", "frog", "pope"]] -> ["lazy hobo","lazy frog","lazy pope","grouchy hobo","grouchy frog","grouchy pope","scheming hobo","scheming frog","scheming pope"]
+-- |    Let's remove all upper case letters from a string.
+-- |        ghci> [c | c <- "IdontLIKEFROGS", c `elem` ['A'..'Z']] -> ILIKEFROGS"
+
+-- | Let's have a function that replaces each odd number greater than '10' with "BANG!" and each odd number that's smaller than '10' with "BOOM!" If a number is not odd we discard it from the list.
+boomBangs xs = [ if x < 10 then "BOOM!" else "BANG!" | x <- xs, odd x] -- | boomBangs [7..13] -> ["BOOM!","BOOM!","BANG!","BANG!"]
+
+-- | Let's have nested list comprehensions. We are operating on lists that contain lists. Let's remove all odd numbers without flatenning it.
+-- | ghci> filterOddNumbers -> [[2,6],[2,4],[]]
+xxs = [[1,2,5,6,7,9],[2,3,4],[1,1,1,1,1,1,1,1,1,1,1,1,1,1]]
+filterOddNumbers = [ [ x | x <- xs, even x ] | xs <- xxs]
